@@ -1,0 +1,28 @@
+{
+  "name": "node-appium",
+  "version": "1.0.0",
+  "description": "Start and Stop Appium Servers for both Android and IOS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "shelljs": "^0.7.8"
+  },
+  "author": {
+  	"name":"tigerpup",
+  	"email":"tigerpup1995@gmail.com"
+  },
+  "contributors":[
+  	{
+  		"name":"muthu veeraraghavan",
+  		"email":"mvraghavan89@gmail.com"
+  	}
+  ],
+  "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/tigerpup/node-appium"
+  },
+  "license": "ISC"
+}
