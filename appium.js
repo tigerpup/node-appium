@@ -96,7 +96,8 @@ function startAppiumfunc(appiumport,webkitport, callback) {
 	    console.log("Appium start:"+ shell_app_cmd,parameters);
 	    // console.log("Appium started");
 	    // callback(null);
-	    var appium_start=child_process.spawn(shell_app_cmd,parameters);
+	    var options={'shell':true,'detached':true};
+        var appium_start=child_process.spawn(shell_app_cmd,parameters,options);
 	    var callback_timer=setTimeout(function(){callback("Appium took too long to start");appium_start.kill();},20000)
 	    appium_start.stdout.on('data',(data)=>{
 	    	 // console.log(`stdout: ${data}`);
@@ -113,7 +114,6 @@ function startAppiumfunc(appiumport,webkitport, callback) {
 		appium_start.on('close', (code) => {
 		  console.log(`appium child process exited with code ${code}`);
 		});
-
 	}
 	catch (ex) {
 	    console.log("Error start appium  : " + ex);
@@ -127,7 +127,11 @@ function startWebkitport(udid, webkitport,callback) {
         var parameters=['-c',udid + ":" + webkitport,'-d'];
         console.log("WDA start:"+ shell_webkit_cmd);
         callback(null);
-        var webkit_start=child_process.spawn(shell_webkit_cmd,parameters);
+        var options={'shell':true,'detached':true};
+        var webkit_start=child_process.spawn(shell_webkit_cmd,parameters,options);
+        webkit_start.stdout.on('data',(data)=>{
+
+        });
     }
     catch (ex) {
         console.log("Error Wda appium: " + ex);
