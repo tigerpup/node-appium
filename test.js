@@ -6,7 +6,7 @@ var appium=require('./index')
 		return;
 	});
 
-appium.start_appium(6666,5555,'62ce4aa43eeed9b95656bfafd8b6b861156a6b7f',function(err,details){
+appium.start_appium(,,'',function(err,details){
 	if(err){
 		console.log('Error occured')
 		return
